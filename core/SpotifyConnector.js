@@ -54,6 +54,16 @@ module.exports = class SpotifyConnector {
     return request.get(options);
   }
   
+	
+PauseSpotify(currentDeviceID) {
+	let options = {
+			url: 'https:\/\/api.spotify.com/v1/me/player/pause',    
+			qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+}
   
   PlaySpotify(currentDeviceID, uri) {
     
