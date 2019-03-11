@@ -52,10 +52,10 @@ Module.register('MMM-SpotifyControl', {
 		this.sendSocketNotification('PLAY_SPOTIFY', payload);
         break;
 	case 'PLAY_NEXT_SPOTIFY':
-		this.sendSocketNotification('PLAY_NEXT');
+		this.sendSocketNotification('PLAY_NEXT_SPOTIFY');
 	break;
 	case 'PLAY_PREVIOUS_SPOTIFY':
-	       this.sendSocketNotification('PLAY_PREVIOUS');
+	       this.sendSocketNotification('PLAY_PREVIOUS_SPOTIFY');
         break;
 	case 'PAUSE_SPOTIFY':
 		this.sendSocketNotification('PAUSE_SPOTIFY');
