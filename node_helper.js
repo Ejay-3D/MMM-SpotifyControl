@@ -30,18 +30,30 @@ module.exports = NodeHelper.create({
         break;
 		    
       case 'PLAY_NEXT':
-        //todo
+	this.connector.NextSpotify().catch((error) => {
+			console.error('Can’t change song. Reason: ');
+			console.error(error);
+		});
        break;
 		    
       case 'PLAY_PREVIOUS':
-        //todo
+	this.connector.PreviousSpotify().catch((error) => {
+			console.error('Can’t change song. Reason: ');
+			console.error(error);
         break;
 		    
       case 'PAUSE_SPOTIFY':
         this.connector.PauseSpotify().catch((error) => {
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
-		console.log('[SPOTIFYCONTROL] : we are in Node_helper trying to PAUSE');
+		});
+		
+        break;
+		
+	 case 'RESUME_SPOTIFY':
+        this.connector.ResumeSpotify().catch((error) => {
+			console.error('Can’t resume player. Reason: ');
+			console.error(error);
 		});
 		
         break;
