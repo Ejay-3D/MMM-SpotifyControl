@@ -101,7 +101,7 @@ Module.register('MMM-SpotifyControl', {
 
     // ... and then repeat in the given interval
     setInterval(() => {
-     this.sendSocketNotification('UPDATE_CURRENT_SONG');
+   //  this.sendSocketNotification('UPDATE_CURRENT_SONG');
     }, this.config.updatesEvery * 1000);
   }
 });
