@@ -16,8 +16,8 @@ In your MagicMirror directory:
 
 ```bash
 cd modules
-git clone https://github.com/raywo/MMM-NowPlayingOnSpotify.git
-cd MMM-NowPlayingOnSpotify
+git clone https://github.com/ejay-ibm/MMM-SpotifyControl.git
+cd MMM-SpotifyControl
 npm install
 ```
 
