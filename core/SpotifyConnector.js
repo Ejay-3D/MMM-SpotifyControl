@@ -33,7 +33,7 @@ module.exports = class SpotifyConnector {
 
                     this.credentials.accessToken = response.access_token;
                     this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-                    let currentDeviceID = this.getDeviceID(payload.deviceName);
+                    let currentDeviceID = this.getDeviceID(payload.name);
                     return this.PlaySpotify(currentDeviceID, uri);
                 })
                 .catch((err) => {
@@ -115,7 +115,7 @@ module.exports = class SpotifyConnector {
 
             request.get(options).then(function(response) {
                 console.error(JSON.stringify(response));
-                return response.devices.some(item => item.name === DeviceName).id;
+                return response.devices.some(item => item.name === name).id;
             }).catch(function(err) {
                 console.error(JSON.stringify(err));
                 return err;
