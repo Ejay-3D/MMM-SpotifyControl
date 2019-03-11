@@ -13,6 +13,7 @@ module.exports = NodeHelper.create({
     socketNotificationReceived: function(notification, payload) {
         switch (notification) {
             case 'PLAY_SPOTIFY':
+                this.connector = new SpotifyConnector(payload);
                 this.connector.playThis(payload).catch((error) => {
                     console.error('Can’t start playing. Reason: ');
                     console.error(error);
