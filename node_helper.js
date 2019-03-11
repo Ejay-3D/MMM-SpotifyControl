@@ -37,7 +37,7 @@ module.exports = NodeHelper.create({
         //todo
         break;
 		    
-      case 'PAUSE':
+      case 'PAUSE_SPOTIFY':
         this.connector.PauseSpotify().catch((error) => {
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
