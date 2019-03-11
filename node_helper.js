@@ -29,14 +29,14 @@ module.exports = NodeHelper.create({
 		   
         break;
 		    
-      case 'PLAY_NEXT':
+      case 'PLAY_NEXT_SPOTIFY':
 	this.connector.NextSpotify().catch((error) => {
 			console.error('Can’t change song. Reason: ');
 			console.error(error);
 		});
        break;
 		    
-      case 'PLAY_PREVIOUS':
+      case 'PLAY_PREVIOUS_SPOTIFY':
 	this.connector.PreviousSpotify().catch((error) => {
 			console.error('Can’t change song. Reason: ');
 			console.error(error);
