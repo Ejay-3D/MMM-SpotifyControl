@@ -40,6 +40,7 @@ module.exports = NodeHelper.create({
 	this.connector.PreviousSpotify().catch((error) => {
 			console.error('Can’t change song. Reason: ');
 			console.error(error);
+		});
         break;
 		    
       case 'PAUSE_SPOTIFY':
