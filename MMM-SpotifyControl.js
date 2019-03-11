@@ -9,7 +9,7 @@ Module.register('MMM-SpotifyControl', {
         hidden: true,
 
         // user definable
-        updatesEvery: 1, // How often should the table be updated in s?
+       // updatesEvery: 1, // How often should the table be updated in s?
         //  showCoverArt: true,       // Do you want the cover art to be displayed?
         deviceName: null, // Set to Spotify device name to controll specific device.
     },
@@ -43,12 +43,12 @@ Module.register('MMM-SpotifyControl', {
     //   ];
     // },
 
-    //  getScripts: function () {
-    //   return [
-    //      this.file('core/NPOS_DomBuilder.js'),
-    //     'moment.js'
-    //  ];
-    // },
+      getScripts: function () {
+       return [
+          this.file('core/NPOS_DomBuilder.js'),
+         'moment.js'
+      ];
+     },
 
 
     notificationReceived: function(notification, payload, sender) {
