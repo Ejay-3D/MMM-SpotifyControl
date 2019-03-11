@@ -27,11 +27,7 @@ Module.register('MMM-SpotifyControl', {
     getDom: function() {
         let domBuilder = new NPOS_DomBuilder2(this.config, this.file(''));
 
-        if (this.initialized) {
-            return domBuilder.getDom(this.context);
-        } else {
-            return domBuilder.getInitDom(this.translate('LOADING'));
-        }
+       
     },
 
     //commenting here as I'm not sure it's necessary for controller 
