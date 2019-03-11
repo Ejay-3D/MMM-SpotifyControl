@@ -56,10 +56,10 @@ module.exports = class SpotifyConnector {
   
 	
 PauseSpotify(currentDeviceID) {
-	let currentDeviceID = this.getDeviceID(payload.deviceName);
+	//let currentDeviceID = this.getDeviceID(payload.deviceName);
 	let options = {
 			url: apiEndpoint + '/pause',    
-			qs: {device_id: currentDeviceID},
+			//qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
