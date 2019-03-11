@@ -41,6 +41,7 @@ module.exports = class SpotifyConnector {
                     console.error(err);
                     console.error('we fail here');
                     console.error(this.credentials.refreshToken);
+                    console.error(this.credentials);
                 });
         }
     }
