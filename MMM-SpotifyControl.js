@@ -25,7 +25,7 @@ Module.register('MMM-SpotifyControl', {
     },
 
     getDom: function() {
-        let domBuilder = new NPOS_DomBuilder(this.config, this.file(''));
+        let domBuilder = new NPOS_DomBuilder2(this.config, this.file(''));
 
         if (this.initialized) {
             return domBuilder.getDom(this.context);
@@ -45,7 +45,7 @@ Module.register('MMM-SpotifyControl', {
 
       getScripts: function () {
        return [
-          this.file('core/NPOS_DomBuilder.js'),
+          this.file('core/NPOS_DomBuilder2.js'),
          'moment.js'
       ];
      },
