@@ -39,8 +39,11 @@ module.exports = class SpotifyConnector {
                 .catch((err) => {
                     console.error('Error while refreshing:');
                     console.error(err);
-                    console.error('we fail here');
+                    console.error('we fail here, refresh token is:');
                     console.error(this.credentials.refreshToken);
+                    console.error('we fail here, access token is:');
+                    console.error(this.credentials.accessToken);  
+                    console.error('we fail here, credentials is:');
                     console.error(this.credentials);
                 });
         }
