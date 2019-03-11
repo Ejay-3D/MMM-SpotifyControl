@@ -47,23 +47,23 @@ Module.register('MMM-SpotifyControl', {
 	 // console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
  
   switch(notification) {
-      case 'PLAY_SPOTIFY':
+	case 'PLAY_SPOTIFY':
 		payload["deviceName"] = this.config.deviceName;
 		this.sendSocketNotification('PLAY_SPOTIFY', payload);
         break;
-		
-      case 'PLAY_NEXT':
-        //todo
-       break;
-      case 'PLAY_PREVIOUS':
-        //todo
+	case 'PLAY_NEXT':
+		this.sendSocketNotification('PLAY_NEXT');
+	break;
+	case 'PLAY_PREVIOUS':
+	       this.sendSocketNotification('PLAY_PREVIOUS');
         break;
-      case 'PAUSE_SPOTIFY':
-		//payload["deviceName"] = this.config.deviceName;
+	case 'PAUSE_SPOTIFY':
 		this.sendSocketNotification('PAUSE_SPOTIFY');
-		console.log('[SPOTIFYCONTROL] : we are in main js received PAUSE NOTIF');
         break;
-      case 'SHUFFLE':
+	case 'RESUME_SPOTIFY':
+		this.sendSocketNotification('RESUME_SPOTIFY');
+	break;
+	case 'SHUFFLE':
         //todo
         break;
       case 'REPEAT':
