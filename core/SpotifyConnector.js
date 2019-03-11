@@ -45,6 +45,8 @@ module.exports = class SpotifyConnector {
                     console.error(this.credentials.accessToken);  
                     console.error('we fail here, credentials is:');
                     console.error(this.credentials);
+                 console.error('token expire:');
+                     console.error(this.tokenExpiresAt);
                 });
         }
     }
