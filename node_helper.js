@@ -41,8 +41,9 @@ module.exports = NodeHelper.create({
         this.connector.PauseSpotify().catch((error) => {
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
+		console.log('[SPOTIFYCONTROL] : we are in Node_helper trying to PAUSE');
 		});
-		console.log('[SPOTIFYCONTROL] : we are in NODEhelper trying to PAUSE');
+		
         break;
 		    
       case 'SHUFFLE':
