@@ -42,8 +42,7 @@ module.exports = NodeHelper.create({
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
 		});
-		     console.log('we are in node_helper js trying to pause');
-		    console.log(payload);
+		
         break;
 		    
       case 'SHUFFLE':
