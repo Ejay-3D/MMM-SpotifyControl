@@ -56,6 +56,7 @@ module.exports = class SpotifyConnector {
   
 	
 PauseSpotify(currentDeviceID) {
+	let currentDeviceID = this.getDeviceID(payload.deviceName);
 	let options = {
 			url: apiEndpoint + '/pause',    
 			qs: {device_id: currentDeviceID},
