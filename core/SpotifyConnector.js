@@ -137,8 +137,8 @@ NextSpotify(currentDeviceID) {
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
-		return request.put(options);
-	console.log(request.put(options));
+		return request.post(options);
+	console.log(request.post(options));
 		     }
 	else {
       return this.refreshAccessToken()
@@ -154,8 +154,8 @@ NextSpotify(currentDeviceID) {
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
-		return request.put(options);
-	console.log(request.put(options));
+		return request.post(options);
+	console.log(request.post(options));
         })
 		.catch((err) => {
           console.error('Error while refreshing:');
@@ -174,8 +174,8 @@ PreviousSpotify(currentDeviceID) {
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
-		return request.put(options);
-	console.log(request.put(options));
+		return request.post(options);
+	console.log(request.post(options));
 		     }
 	else {
       return this.refreshAccessToken()
@@ -191,8 +191,8 @@ PreviousSpotify(currentDeviceID) {
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
-		return request.put(options);
-	console.log(request.put(options));
+		return request.post(options);
+	console.log(request.post(options));
         })
 		.catch((err) => {
           console.error('Error while refreshing:');
