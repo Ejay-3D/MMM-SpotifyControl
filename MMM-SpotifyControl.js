@@ -44,7 +44,7 @@ Module.register('MMM-SpotifyControl', {
   
   
   notificationReceived: function(notification, payload, sender) {
-	//  console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
+	  console.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
  
   switch(notification) {
       case 'PLAY_SPOTIFY':
@@ -61,6 +61,7 @@ Module.register('MMM-SpotifyControl', {
       case 'PAUSE_SPOTIFY':
 		payload["deviceName"] = this.config.deviceName;
 		this.sendSocketNotification('PAUSE_SPOTIFY', payload);
+		console.log('we are in main js received notification');
         break;
       case 'SHUFFLE':
         //todo
