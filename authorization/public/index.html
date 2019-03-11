@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Authorize MMM-NowPlayingOnSpotify</title>
+  <title>Authorize MMM-SpotifyControl</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -11,8 +11,8 @@
 <div class="container">
   <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <img class="d-block mx-auto mb-4" src="img/Icon.png" alt="" width="72" height="72">
-    <h1 class="display-4">MMM-NowPlayingOnSpotify</h1>
-    <p class="lead">A MagicMirror<sup>2</sup> module which displays your on Spotify currently playing track.</p>
+    <h1 class="display-4">MMM-SpotifyControl</h1>
+    <p class="lead">A MagicMirror<sup>2</sup> module which control Spotify Player.</p>
   </div>
 
   <p>In order to work properly the module needs read access to some of your Spotifiy information. Namely these information are: </p>
@@ -93,14 +93,14 @@
 
     <pre>
 {
-  module: "MMM-NowPlayingOnSpotify",
-  position: "top_left",
-
+  module: "MMM-SpotifyControl",
+ 
   config: {
     clientID: "{{clientID}}",
     clientSecret: "{{clientSecret}}",
     accessToken: "{{accessToken}}",
-    refreshToken: "{{refreshToken}}"
+    refreshToken: "{{refreshToken}}",
+    deviceName : "your-spotify-device-name" 
   }
 },
     </pre>
