@@ -37,7 +37,10 @@ module.exports = NodeHelper.create({
         break;
 		    
       case 'PAUSE':
-        //todo
+        this.connector.pauseThis(payload).catch((error) => {
+			console.error('Can’t pause player. Reason: ');
+			console.error(error);
+		});
         break;
 		    
       case 'SHUFFLE':
