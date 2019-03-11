@@ -15,28 +15,7 @@ module.exports = class SpotifyConnector {
     this.tokenExpiresAt = moment();
   }
 
-  retrieveCurrentlyPlaying() {
-    if (moment().isBefore(this.tokenExpiresAt)) {
-      return this.getSpotifyData();
-
-    } else {
-      return this.refreshAccessToken()
-        .then((response) => {
-          console.log('Refreshed access token because it has expired. Expired at: %s now is: %s',
-            this.tokenExpiresAt.format('HH:mm:ss'), moment().format('HH:mm:ss'));
-
-          this.credentials.accessToken = response.access_token;
-          this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-
-          return this.getSpotifyData();
-        })
-        .catch((err) => {
-          console.error('Error while refreshing:');
-          console.error(err);
-        });
-    }
-  }
-  
+ 
   playThis(payload) {
 	let url = payload.url;  
 	let uri = replaceall("/", ":", url.replace("https:\/\/open.spotify.com", "spotify"));
