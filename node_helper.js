@@ -26,6 +26,7 @@ module.exports = NodeHelper.create({
 			console.error('Can’t start playing. Reason: ');
 			console.error(error);
 		});
+		   
         break;
 		    
       case 'PLAY_NEXT':
@@ -41,6 +42,8 @@ module.exports = NodeHelper.create({
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
 		});
+		     console.log('we are in node_helper js trying to pause');
+		    console.log(payload);
         break;
 		    
       case 'SHUFFLE':
