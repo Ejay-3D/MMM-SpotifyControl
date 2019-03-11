@@ -11,7 +11,7 @@ Module.register('MMM-SpotifyControl', {
     // user definable
     updatesEvery: 1000,          // How often should the table be updated in s?
     showCoverArt: false,       // Do you want the cover art to be displayed?
-	deviceName: "miroir,		  // Set to Spotify device name to controll specific device.
+	deviceName: "miroir"		  // Set to Spotify device name to controll specific device.
   },
 
 
