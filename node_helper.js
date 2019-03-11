@@ -42,7 +42,7 @@ module.exports = NodeHelper.create({
 			console.error('Can’t pause player. Reason: ');
 			console.error(error);
 		});
-		
+		console.log('[SPOTIFYCONTROL] : we are in NODEhelper trying to PAUSE');
         break;
 		    
       case 'SHUFFLE':
