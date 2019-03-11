@@ -9,8 +9,7 @@ Module.register('MMM-SpotifyControl', {
     hidden: true,
 
     // user definable
-    updatesEvery: 1000,          // How often should the table be updated in s?
-    showCoverArt: false,       // Do you want the cover art to be displayed?
+
 	deviceName: "miroir"		  // Set to Spotify device name to controll specific device.
   },
 
@@ -34,13 +33,7 @@ Module.register('MMM-SpotifyControl', {
     }
   },
 
-  getStyles: function () {
-    return [
-      this.file('css/styles.css'),
-      this.file('node_modules/moment-duration-format/lib/moment-duration-format.js'),
-      'font-awesome.css'
-    ];
-  },
+
 
   getScripts: function () {
     return [
@@ -85,14 +78,6 @@ Module.register('MMM-SpotifyControl', {
   },
 
 
-  socketNotificationReceived: function (notification, payload) {
-    switch (notification) {
-      case 'RETRIEVED_SONG_DATA':
-        this.initialized = true;
-        this.context = payload;
-        this.updateDom();
-    }
-  },
 
   startFetchingLoop() {
     // start immediately ...
@@ -107,7 +92,7 @@ Module.register('MMM-SpotifyControl', {
 
     // ... and then repeat in the given interval
     setInterval(() => {
-      this.sendSocketNotification('UPDATE_CURRENT_SONG');
+    //  this.sendSocketNotification('UPDATE_CURRENT_SONG');
     }, this.config.updatesEvery * 1000);
   }
 });
