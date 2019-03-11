@@ -88,5 +88,20 @@ Module.register('MMM-SpotifyControl', {
         }
 
     },
+ startFetchingLoop() {
+    // start immediately ...
+    let credentials = {
+      clientID: this.config.clientID,
+      clientSecret: this.config.clientSecret,
+      accessToken: this.config.accessToken,
+      refreshToken: this.config.refreshToken
+    };
 
+    this.sendSocketNotification('CONNECT_TO_SPOTIFY', credentials);
+
+    // ... and then repeat in the given interval
+    setInterval(() => {
+   //  this.sendSocketNotification('UPDATE_CURRENT_SONG');
+    }, this.config.updatesEvery * 1000);
+  }
 });
