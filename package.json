@@ -1,10 +1,10 @@
 {
-  "name": "MMM-NowPlayingOnSpotify",
+  "name": "MMM-SpotifyControl",
   "version": "1.0.0",
-  "description": "A module for MagicMirror 2 displaying the currently playing song on Spotify.",
+  "description": "A module for MagicMirror 2 controling playing song on Spotify.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mthalhof/MMM-NowPlayingOnSpotify"
+    "url": "https://github.com/ejay-ibm/MMM-SpotifyControl"
   },
   "keywords": [
     "magic mirror",
@@ -14,18 +14,18 @@
     "module"
   ],
   "author": {
-    "name": "raywo",
-    "email": "ray@skillbird.de",
-    "url": "https://github.com/mthalhof"
+    "name": "ejay",
+    "email": "manumanu2000@gmail.com",
+    "url": "https://github.com/ejay-ibm/"
   },
   "contributors": [
-    "https://github.com/mthalhof/MMM-NowPlayingOnSpotify/graphs/contributors"
+    "https://github.com/ejay-ibm/MMM-SpotifyControl/graphs/contributors"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/raywo/MMM-NowPlayingOnSpotify/issues"
+    "url": "https://github.com/ejay-ibm/MMM-SpotifyControl/issues"
   },
-  "homepage": "https://github.com/mthalhof/MMM-NowPlayingOnSpotify",
+  "homepage": "https://github.com/ejay-ibm/MMM-SpotifyControl",
   "engines": {
     "node": ">=7"
   },
