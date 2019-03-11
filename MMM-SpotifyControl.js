@@ -96,7 +96,11 @@ Module.register('MMM-SpotifyControl', {
       accessToken: this.config.accessToken,
       refreshToken: this.config.refreshToken
     };
-
+console.error('from MMM-SpotifyControl');
+          console.error(this.config.clientID);
+     console.error(this.config.clientSecret);
+     console.error(this.config.accessToken);
+     console.error(this.config.refreshToken);
    // this.sendSocketNotification('CONNECT_TO_SPOTIFY', credentials);
 
     // ... and then repeat in the given interval
