@@ -57,7 +57,7 @@ module.exports = class SpotifyConnector {
 	
 PauseSpotify(currentDeviceID) {
 	let options = {
-			url: 'https:\/\/api.spotify.com/v1/me/player/pause',    
+			url: apiEndpoint + '/pause',    
 			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
