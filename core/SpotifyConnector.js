@@ -57,8 +57,7 @@ module.exports = class SpotifyConnector {
 	
 PauseSpotify(currentDeviceID) {
 	  if (moment().isBefore(this.tokenExpiresAt)) {
- 
-	console.log('[SPOTIFYCONTROL] :We are in connector!');
+
 	let options = {
 			url: apiEndpoint + '/pause',    
 			//qs: {device_id: currentDeviceID},
@@ -91,8 +90,123 @@ PauseSpotify(currentDeviceID) {
         });
 	}	
 }
+	
+ResumeSpotify(currentDeviceID) {
+	  if (moment().isBefore(this.tokenExpiresAt)) {
+
+	let options = {
+			url: apiEndpoint + '/play',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+		     }
+	else {
+      return this.refreshAccessToken()
+        .then((response) => {
+          console.log('Refreshed access token because it has expired. Expired at: %s now is: %s',
+            this.tokenExpiresAt.format('HH:mm:ss'), moment().format('HH:mm:ss'));
+
+          this.credentials.accessToken = response.access_token;
+          this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
+		let options = {
+			url: apiEndpoint + '/play',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+        })
+		.catch((err) => {
+          console.error('Error while refreshing:');
+          console.error(err);
+        });
+	}	
+}
   
-  PlaySpotify(currentDeviceID, uri) {
+	
+NextSpotify(currentDeviceID) {
+	  if (moment().isBefore(this.tokenExpiresAt)) {
+ 
+	let options = {
+			url: apiEndpoint + '/next',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+		     }
+	else {
+      return this.refreshAccessToken()
+        .then((response) => {
+          console.log('Refreshed access token because it has expired. Expired at: %s now is: %s',
+            this.tokenExpiresAt.format('HH:mm:ss'), moment().format('HH:mm:ss'));
+
+          this.credentials.accessToken = response.access_token;
+          this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
+		let options = {
+			url: apiEndpoint + '/next',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+        })
+		.catch((err) => {
+          console.error('Error while refreshing:');
+          console.error(err);
+        });
+	}	
+}
+	
+PreviousSpotify(currentDeviceID) {
+	  if (moment().isBefore(this.tokenExpiresAt)) {
+ 
+	
+	let options = {
+			url: apiEndpoint + '/previous',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+		     }
+	else {
+      return this.refreshAccessToken()
+        .then((response) => {
+          console.log('Refreshed access token because it has expired. Expired at: %s now is: %s',
+            this.tokenExpiresAt.format('HH:mm:ss'), moment().format('HH:mm:ss'));
+
+          this.credentials.accessToken = response.access_token;
+          this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
+		let options = {
+			url: apiEndpoint + '/previous',    
+			//qs: {device_id: currentDeviceID},
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true
+		};
+		return request.put(options);
+	console.log(request.put(options));
+        })
+		.catch((err) => {
+          console.error('Error while refreshing:');
+          console.error(err);
+        });
+	}	
+}	
+	
+	
+	
+	
+	
+	
+ PlaySpotify(currentDeviceID, uri) {
     
 	if(uri.indexOf('track')> -1){
 		let options = {
