@@ -37,6 +37,8 @@ Now just follow the steps described there. After successful authorisation the ap
 
 **Step 3: Configure your mirror**. Copy that snippet and paste it into your mirror’s `config.js`. Configure the rest to your needs and you’re good to go.
 
+** If you are using NowPlayingOnSpotify Module already I suggest to update your Tokens as well in this module so both module will use the same tokens.
+
 Here is an example for an entry in `config.js`
 
 ```javascript
