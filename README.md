@@ -21,7 +21,7 @@ cd MMM-SpotifyControl
 npm install
 ```
 
-### Step 2 – Create and authorise a Spotify app
+### Step 2 – Create and authorize a Spotify app
 In order to be able to connect to the Spotify API you need to create an app in the [Spotify developer area](https://beta.developer.spotify.com/dashboard/applications). Then you need to authorise the app to access your personal data. Et voilà!
 
 The module provides you with a special app which describes all the necessary steps and which guides you through the whole process. To use this app change into the `authorization` folder and start the app by typing `node app`. 
