@@ -61,7 +61,7 @@ Module.register('MMM-SpotifyControl', {
       case 'PAUSE_SPOTIFY':
 		//payload["deviceName"] = this.config.deviceName;
 		this.sendSocketNotification('PAUSE_SPOTIFY');
-		console.log('we are in main js received PAUSE NOTIF');
+		console.log('[SPOTIFYCONTROL] : we are in main js received PAUSE NOTIF');
         break;
       case 'SHUFFLE':
         //todo
