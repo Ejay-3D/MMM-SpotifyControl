@@ -22,7 +22,7 @@ module.exports = class SpotifyConnector {
 	
     if (moment().isBefore(this.tokenExpiresAt)) {
 	  
-	  let currentDeviceID = this.getDeviceID(payload.name);
+	  let currentDeviceID = this.getDeviceID(payload.DeviceName);
 	  console.error("play on: "+currentDeviceID);
 	  return this.PlaySpotify(currentDeviceID, uri);
 	
@@ -34,13 +34,14 @@ module.exports = class SpotifyConnector {
 
           this.credentials.accessToken = response.access_token;
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-		  let currentDeviceID = this.getDeviceID(payload.name);
+		  let currentDeviceID = this.getDeviceID(payload.deviceName);
 		  return this.PlaySpotify(currentDeviceID, uri);
         })
         .catch((err) => {
           console.error('Error while refreshing:');
           console.error(err);
-	      console.error(payload);
+	      console.error(payload.deviceName);
+	      console.error(currentDeviceID);
         });
     }
   }
@@ -239,7 +240,7 @@ PreviousSpotify(currentDeviceID) {
     
   }
   
-  getDeviceID(name) {
+  getDeviceID(DeviceName) {
 	if(name != null){
 		let options = {
 			url: apiEndpoint + '/devices',   
@@ -250,7 +251,7 @@ PreviousSpotify(currentDeviceID) {
 		
 		request.get(options).then(function (response) {
 			console.error(JSON.stringify(response));
-			return response.devices.some(item => item.name === name).id;
+			return response.devices.some(item => item.name === "name").id;
 		}).catch(function (err) {
 			console.error(JSON.stringify(err));
 			return err;
@@ -265,7 +266,7 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 		
-		request.get(options).then(function (response) {
+		request.put(options).then(function (response) {
 			return response.device.id;
 		}).catch(function (err) {
 			return err;
