@@ -253,16 +253,16 @@ PreviousSpotify(currentDeviceID) {
 }
 
 	  sleep(1000).then(() => {
-    var result = response.json(); 
+    	var result = response.json(); 
 	 var  mydevices =  result.devices;
-		  var i
+	  var i
 	
     for ( i = 0; i < mydevices.length; i++) {
 	 var device =  mydevices[i]
       
       if (device.name == deviceName) var foundId = device.id;
 	    console.error('after if :'+foundId)
-});
+    }});
 	  return foundId;
  /* var options = {
    // url: apiEndpoint + '/devices',
