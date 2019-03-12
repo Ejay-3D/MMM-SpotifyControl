@@ -282,6 +282,7 @@ PreviousSpotify(currentDeviceID) {
 	    return foundId;
 	   
 }
+    return foundId;
     request();
 }
   
