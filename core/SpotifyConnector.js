@@ -249,14 +249,16 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 		
-		request.get(options).then(function (response) {
-			console.error(JSON.stringify(response));
-			if (deviceName == jsonObject.name) return jsonObject.id;
-		}).catch(function (err) {
-			console.error(JSON.stringify(err));
-			console.error(deviceName);
-			return err;
-		})
+		request.get(options).then((response) => {
+  var allDevices = response.body.devices
+  var foundId = null
+  for (i = 0; i < allDevices.length; i++) {
+    var device = allDevices[i]
+    if (device.name == "mirror") foundId = device.id
+  }
+
+  console.log(foundId)
+}
 		
 		
 	} else {
@@ -267,14 +269,16 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 		
-		request.put(options).then(function (response) {
-			return jsonObject.id;
-		}).catch(function (err) {
-			return err;
-		})
-	}
+		request.get(options).then((response) => {
+  var allDevices = response.body.devices
+  var foundId = null
+  for (i = 0; i < allDevices.length; i++) {
+    var device = allDevices[i]
+    foundId = device.id
+ 			 }
+		}
 
-    
+ 	 }
   }
   
 
