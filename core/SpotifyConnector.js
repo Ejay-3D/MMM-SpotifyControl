@@ -22,7 +22,7 @@ module.exports = class SpotifyConnector {
 	
     if (moment().isBefore(this.tokenExpiresAt)) {
 	  
-	  let currentDeviceID = this.getDeviceID(payload.DeviceName);
+	  let currentDeviceID = this.getDeviceID(payload.deviceName);
 	  console.error("play on: "+currentDeviceID);
 	  return this.PlaySpotify(currentDeviceID, uri);
 	
