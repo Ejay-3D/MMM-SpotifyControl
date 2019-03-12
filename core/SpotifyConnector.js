@@ -274,9 +274,9 @@ PreviousSpotify(currentDeviceID) {
     }
 	 console.error('we are here my found id for mirror is :');
 	console.error(foundId);   
-	   return await request();
+	  // return await request();
 }
-   var result = request()
+   var result = await request()
 console.error("When this line is evaluated???")
 console.error(result)
 	  console.error(foundId)
