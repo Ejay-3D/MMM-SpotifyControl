@@ -254,8 +254,7 @@ const request = async () => {
       var device = devices[i]
       if (device.name == deviceName) foundId = device.id
     }
-  })
-
+}
   return foundId
 }
   
