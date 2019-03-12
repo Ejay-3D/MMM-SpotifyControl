@@ -255,13 +255,13 @@ PreviousSpotify(currentDeviceID) {
       if (device.name == deviceName) foundId = device.id
 	
     }
-	  
-}
-   console.error(response);
+	  console.error(response);
 	    console.error(result);
 	    console.error(device);
 	    console.error(device.name);
   return foundId
+}
+   
 }
   
 
