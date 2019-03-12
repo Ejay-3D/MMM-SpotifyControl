@@ -274,11 +274,11 @@ PreviousSpotify(currentDeviceID) {
 	console.error(deviceName);
       if (device.name == deviceName) foundId = device.id;
   	//	return foundId;
-	    console.error('we are here my found id for mirror is :');
+	    
+    }
+	 console.error('we are here my found id for mirror is :');
 	console.error(foundId);
 	    currentDeviceID = foundId
-    }
-	 
 	   
 }
     request();
