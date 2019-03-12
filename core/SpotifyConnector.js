@@ -247,7 +247,8 @@ PreviousSpotify(currentDeviceID) {
   }
   var foundId = null
   
-   const request = async () => {
+ 
+   async function request() => {
    const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
    var mydevices = result.devices
@@ -276,11 +277,9 @@ PreviousSpotify(currentDeviceID) {
       if (device.name == deviceName) foundId = device.id;
     }
 	 console.error('we are here my found id for mirror is :');
-	console.error(foundId);
-	   
+	console.error(foundId);   
 }
-    
-    request(foundId);
+    request();
 }
   
 
