@@ -269,7 +269,9 @@ PreviousSpotify(currentDeviceID) {
       device = mydevices[i]
       console.error('device:');
 	console.error(device);
-      if (device.name == deviceName) foundId = device.id
+	    console.error('device name:');
+	console.error(device.name);
+      if (device.name == deviceName) foundId = device.id;
 
     }
 	   return foundId;
