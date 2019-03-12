@@ -248,7 +248,7 @@ PreviousSpotify(currentDeviceID) {
   var foundId = null
   
  
-   async function request() => {
+   async function request() {
    const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
    var mydevices = result.devices
