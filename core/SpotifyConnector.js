@@ -241,7 +241,7 @@ PreviousSpotify(currentDeviceID) {
   }
   
   getDeviceID(DeviceName) {
-	if(name != null){
+	if(DeviceName != null){
 		let options = {
 			url: apiEndpoint + '/devices',   
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
