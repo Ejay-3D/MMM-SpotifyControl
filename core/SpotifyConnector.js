@@ -248,7 +248,7 @@ PreviousSpotify(currentDeviceID) {
   var foundId = null
   
  
-   const request = async() => 	{
+   async function request()  	{
    const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
    const mydevices = await result.devices
@@ -260,6 +260,7 @@ PreviousSpotify(currentDeviceID) {
 	  device = mydevices[i]
       
       if (device.name == deviceName) foundId = device.id;
+	    console.error('after if :'+foundId)
     }
 	
 }
@@ -267,14 +268,12 @@ PreviousSpotify(currentDeviceID) {
 console.error("When this line is evaluated???")
 console.error(result)
 	  console.error(foundId)
-	  result.then(function(result) 
-		      {
+	  request()
+		  .then((foundId) =>		      
 		  console.error("When this second line is evaluated???")
-		  console.error("result : ")
-console.error(result)
-		  console.error("foundID : ")
-	  console.error(foundId)
-		  return;
+		  console.error("result : "+result)
+		  console.error("foundID : "+foundId))
+	
 		 
 	  })
 		
