@@ -253,15 +253,12 @@ PreviousSpotify(currentDeviceID) {
     for (i = 0; i < devices.length; i++) {
       var device = devices[i]
       if (device.name == deviceName) foundId = device.id
-	
+	console.error(json);
+	    console.error(foundId);
     }
-	  console.error(response);
-	    console.error(result);
-	    console.error(device);
-	    console.error(device.name);
-  return foundId
+ 
 }
-   
+    request();
 }
   
 
