@@ -241,43 +241,24 @@ PreviousSpotify(currentDeviceID) {
   }
   
   getDeviceID(deviceName) {
-	if(deviceName != null){
-		let options = {
-			url: apiEndpoint + '/devices',   
-			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
-			json: true,
-			resolveWithFullResponse: true
-		};
-		
-		request.get(options).then((response) => {
-  var allDevices = response.body.devices
-  var foundId = null
-  for (i = 0; i < allDevices.length; i++) {
-    var device = allDevices[i]
-    if (device.name == "mirror") foundId = device.id
+  var options = {
+    url: apiEndpoint + '/devices',   
+    headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+    json: true,
+    resolveWithFullResponse: true
   }
 
-  console.log(foundId)
+  request.get(options).then((response) => {
+    var devices = response.body.devices
+    //You should check devices are null or empty.
+    var foundId = devices[0].id
+    for (i = 0; i < devices.length; i++) {
+      var device = devices[i]
+      if (device.name == deviceName) foundId = device.id
+    }
+    return foundId
+  })
 }
-		
-		
-	} else {
-		let options = {
-			url: apiEndpoint,
-			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
-			json: true,
-			resolveWithFullResponse: true
-		};
-		
-		request.get(options).then((response) => {
-  
-  var foundId = response.body.devices[0].id
-  console.log(foundId)
-}
-		}
-
- 	 }
-  }
   
 
   refreshAccessToken() {
