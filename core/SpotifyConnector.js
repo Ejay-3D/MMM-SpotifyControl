@@ -266,11 +266,10 @@ PreviousSpotify(currentDeviceID) {
 	   
     for (var i = 0; i < mydevices.length; i++) {
       var device = mydevices[i]
-      if (device.name == deviceName) {
-	      foundId = device.id
-      } else {  foundId = device.id
-	     }
-	      
+      if (device.name == deviceName) foundId = device.id
+	       console.error('we are here my found id for mirror is :');
+	console.error(foundId);
+	    
 	return foundId;
     }
 }
