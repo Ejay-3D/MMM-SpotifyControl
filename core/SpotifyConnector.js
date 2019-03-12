@@ -277,8 +277,9 @@ PreviousSpotify(currentDeviceID) {
 	  // return await foundId;
 }
    var result = request()
-console.log("When this line is evaluated???")
-console.log(result)
+console.error("When this line is evaluated???")
+console.error(result)
+	  console.error(foundId)
 }
   
 
