@@ -270,8 +270,8 @@ console.error(result)
 	  console.error(foundId)
 	  request()
 		  .then((foundId) =>		      
-		  console.error("When this second line is evaluated???")
-		  console.error("result : "+result)
+		  console.error("When this second line is evaluated???"),
+		  console.error("result : "+result),
 		  console.error("foundID : "+foundId))
 	
 		 
