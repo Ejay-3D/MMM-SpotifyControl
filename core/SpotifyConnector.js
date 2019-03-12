@@ -276,7 +276,8 @@ PreviousSpotify(currentDeviceID) {
 	console.error(foundId);   
 	   return await foundId;
 }
-    request();
+    var result = request()
+console.log(result);
 }
   
 
