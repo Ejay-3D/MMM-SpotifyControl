@@ -253,9 +253,9 @@ PreviousSpotify(currentDeviceID) {
 	   console.error('we are here my devices id is :');
 	console.error(mydevices[0].id);
 	   var i
-	   const device
+	
     for ( i = 0; i < mydevices.length; i++) {
-	  device = await mydevices[i]
+	 var device = await mydevices[i]
       
       if (device.name == deviceName) const foundId = await device.id;
 	    console.error('after if :'+foundId)
