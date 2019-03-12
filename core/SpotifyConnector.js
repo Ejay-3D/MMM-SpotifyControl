@@ -245,7 +245,7 @@ PreviousSpotify(currentDeviceID) {
   }
   var foundId = null
 const request = async () => {
-   const response = await fetch(request.get(options))
+   const response = await fetch(request.get(options));
    const result = await(response.json());
     var devices = response.json.body.devices
     //You should check devices are null or empty.
@@ -253,6 +253,10 @@ const request = async () => {
     for (i = 0; i < devices.length; i++) {
       var device = devices[i]
       if (device.name == deviceName) foundId = device.id
+	    console.log(response);
+	    console.log(result);
+	    console.log(device);
+	    console.log(device.name);
     }
 }
   return foundId
