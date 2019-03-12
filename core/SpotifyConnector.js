@@ -256,6 +256,8 @@ PreviousSpotify(currentDeviceID) {
 	console.error(result);
 	console.error('we are here my devices are :');
 	console.error(mydevices);
+	   console.error('we are here my devices id is :');
+	console.error(mydevices.id);
    
    //You should check devices are null or empty.
     foundId = mydevices[0].id
