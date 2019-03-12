@@ -250,9 +250,7 @@ PreviousSpotify(currentDeviceID) {
    const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
    var mydevices = result.devices
-	   console.error('we are here response is :');
-	console.error(response);
-	 console.error('we are here result is :');
+	   console.error('we are here result is :');
 	console.error(result);
 	console.error('we are here my devices are :');
 	console.error(mydevices);
