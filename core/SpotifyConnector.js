@@ -264,14 +264,14 @@ PreviousSpotify(currentDeviceID) {
 	   console.error('we are here my found id is :');
 	console.error(foundId);
 	   
-    for (i = 0; i < mydevices.length; i++) {
+    for (var i = 0; i < mydevices.length; i++) {
       var device = mydevices[i]
       if (device.name == deviceName) {
 	      foundId = device.id
       } else {  foundId = device.id
 	     }
 	      
-//	return foundId;
+	return foundId;
     }
 }
     request();
