@@ -249,8 +249,8 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 		
-		request.get(options).then(function (response.body) {
-			console.error(JSON.stringify(response.body));
+		request.get(options).then(function (response.body.devices) {
+			console.error(JSON.stringify(response.body.devices));
 			if (deviceName == jsonObject.name) return jsonObject.id;
 		}).catch(function (err) {
 			console.error(JSON.stringify(err));
@@ -267,7 +267,7 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 		
-		request.put(options).then(function (response.body) {
+		request.put(options).then(function (response.body.devices) {
 			return jsonObject.id;
 		}).catch(function (err) {
 			return err;
