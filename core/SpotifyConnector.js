@@ -245,25 +245,27 @@ PreviousSpotify(currentDeviceID) {
     json: true,
     resolveWithFullResponse: true
   }
-  var foundId = null
+   
    async function request()  	{
-   let response = new Promise(fetch('https://api.spotify.com/v1/me/player/devices',options));
-   let result = await response.json(); 
-   let mydevices = result.devices
+   const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
+   const result = await response.json(); 
+   let mydevices = await result.devices
 	   console.error('we are here my devices id is :');
 	console.error(mydevices[0].id);
 	   var i
-	   var device
+	   const device
     for ( i = 0; i < mydevices.length; i++) {
-	  device = mydevices[i]
+	  device = await mydevices[i]
       
-      if (device.name == deviceName) foundId = device.id;
+      if (device.name == deviceName) const foundId = await device.id;
 	    console.error('after if :'+foundId)
+	   
     }
-		 console.error(foundId);	
+		 return foundId;
 	   
 }
-   request();	
+  const myID = request();	
+	  result.then(foundId => console.error(foundId));
 	  
 }
   
