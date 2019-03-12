@@ -204,10 +204,6 @@ PreviousSpotify(currentDeviceID) {
 }	
 	
 	
-	
-	
-	
-	
  PlaySpotify(currentDeviceID, uri) {
     
 	if(uri.indexOf('track')> -1){
@@ -242,22 +238,24 @@ PreviousSpotify(currentDeviceID) {
   
   getDeviceID(deviceName) {
   var options = {
-    url: apiEndpoint + '/devices',   
+    url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
     json: true,
     resolveWithFullResponse: true
   }
+  var foundId = null
 
   request.get(options).then((response) => {
     var devices = response.body.devices
     //You should check devices are null or empty.
-    var foundId = devices[0].id
+    foundId = devices[0].id
     for (i = 0; i < devices.length; i++) {
       var device = devices[i]
       if (device.name == deviceName) foundId = device.id
     }
-    return foundId
   })
+
+  return foundId
 }
   
 
