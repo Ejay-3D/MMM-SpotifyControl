@@ -244,9 +244,10 @@ PreviousSpotify(currentDeviceID) {
     resolveWithFullResponse: true
   }
   var foundId = null
-
-  request.get(options).then((response) => {
-    var devices = response.body.devices
+const request = async () => {
+   const response = await fetch(request.get(options))
+   const result = await(response.json());
+    var devices = response.json.body.devices
     //You should check devices are null or empty.
     foundId = devices[0].id
     for (i = 0; i < devices.length; i++) {
