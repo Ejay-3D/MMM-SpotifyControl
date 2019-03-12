@@ -240,8 +240,8 @@ PreviousSpotify(currentDeviceID) {
     
   }
   
-  getDeviceID(DeviceName) {
-	if(DeviceName != null){
+  getDeviceID(deviceName) {
+	if(deviceName != null){
 		let options = {
 			url: apiEndpoint + '/devices',   
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
@@ -251,9 +251,10 @@ PreviousSpotify(currentDeviceID) {
 		
 		request.get(options).then(function (response) {
 			console.error(JSON.stringify(response));
-			return response.devices.some(item => item.name === payload.Devicename).id;
+			return response.devices.some(item => item.name === payload.deviceName).id;
 		}).catch(function (err) {
 			console.error(JSON.stringify(err));
+			console.error(payload.deviceName);
 			return err;
 		})
 		
