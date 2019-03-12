@@ -251,7 +251,7 @@ PreviousSpotify(currentDeviceID) {
 		
 		request.get(options).then(function (response) {
 			console.error(JSON.stringify(response));
-			return response.devices.some(item => item.name === "name").id;
+			return response.devices.some(item => item.name === "payload.Devicename").id;
 		}).catch(function (err) {
 			console.error(JSON.stringify(err));
 			return err;
