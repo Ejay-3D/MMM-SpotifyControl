@@ -274,7 +274,7 @@ PreviousSpotify(currentDeviceID) {
     }
 	 console.error('we are here my found id for mirror is :');
 	console.error(foundId);   
-	  // return await request();
+	  return foundId();
 }
    var result =  request()
 console.error("When this line is evaluated???")
@@ -285,10 +285,9 @@ console.error(result)
 		  console.error("When this second line is evaluated???")
 console.error(result)
 	  console.error(foundId)
-		  return foundId;
+		 
 	  })
-		  console.error('im trying to return foundID here')
-		  return foundId;  
+		
 }
   
 
