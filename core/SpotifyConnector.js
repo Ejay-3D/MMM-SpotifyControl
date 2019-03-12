@@ -247,9 +247,9 @@ PreviousSpotify(currentDeviceID) {
   }
   var foundId = null
    async function request()  	{
-   const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
-   const result = await response.json(); 
-   const mydevices = await result.devices
+   let response = new Promise(fetch('https://api.spotify.com/v1/me/player/devices',options));
+   let result = await response.json(); 
+   let mydevices = result.devices
 	   console.error('we are here my devices id is :');
 	console.error(mydevices[0].id);
 	   var i
@@ -260,10 +260,10 @@ PreviousSpotify(currentDeviceID) {
       if (device.name == deviceName) foundId = device.id;
 	    console.error('after if :'+foundId)
     }
-		 alert(foundId);	  
+		 console.error(foundId);	
+	   
 }
-  
- request();		 
+   request();	
 	  
 }
   
