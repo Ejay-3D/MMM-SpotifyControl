@@ -40,6 +40,7 @@ module.exports = class SpotifyConnector {
         .catch((err) => {
           console.error('Error while refreshing:');
           console.error(err);
+	      console.error(payload);
         });
     }
   }
