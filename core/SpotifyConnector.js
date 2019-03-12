@@ -247,13 +247,13 @@ PreviousSpotify(currentDeviceID) {
 			resolveWithFullResponse: true
 		};
 	  
-	let response =  fetch('https://api.spotify.com/v1/me/player/devices',options);
+	const response =  fetch('https://api.spotify.com/v1/me/player/devices',options);
 	 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 	  sleep(1000).then(() => {
-    	var result = response.json(); 
+    	const result = response.json(); 
 	 var  mydevices =  result.devices;
 	  var i
 	
