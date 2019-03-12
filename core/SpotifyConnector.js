@@ -239,7 +239,32 @@ PreviousSpotify(currentDeviceID) {
   }
   
   getDeviceID(deviceName) {
-  var options = {
+	  
+	  let options = {
+			url: apiEndpoint + '/devices',   
+			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
+			json: true,
+			resolveWithFullResponse: true
+		};
+	  
+	let response =  fetch('https://api.spotify.com/v1/me/player/devices',options);
+	 function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+	  sleep(1000).then(() => {
+    var result = response.json(); 
+	 var  mydevices =  result.devices;
+		  var i
+	
+    for ( i = 0; i < mydevices.length; i++) {
+	 var device =  mydevices[i]
+      
+      if (device.name == deviceName) var foundId = device.id;
+	    console.error('after if :'+foundId)
+});
+	  return foundId;
+ /* var options = {
    // url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
     json: true,
@@ -266,7 +291,7 @@ PreviousSpotify(currentDeviceID) {
 }
   const myID = request();	
 	  myID.then(foundId => console.error(foundId));
-	  
+*/	  
 }
   
 
