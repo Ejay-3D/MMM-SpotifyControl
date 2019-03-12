@@ -239,36 +239,46 @@ PreviousSpotify(currentDeviceID) {
   }
   
   getDeviceID(deviceName) {
-	  
- var options = {
+  var options = {
    // url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
     json: true,
     resolveWithFullResponse: true
   }
-   
-	function request()  	{
-  	   return await fetch('https://api.spotify.com/v1/me/player/devices',options);
-	}
-	  async (myID) => {
-	  const result = await request.json(); 
-   	   let mydevices = await result.devices
-	   console.error('we are here my devices id is :');		   
-	   console.error(mydevices[0].id);		
+  var foundId = null
+  
+ 
+   const request = async() => 	{
+   const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
+   const result = await response.json(); 
+   const mydevices = await result.devices
+	 console.error('we are here my devices are :');
+	console.error(mydevices);
+	   console.error('we are here my devices id is :');
+	console.error(mydevices[0].id);
 	   var i
 	   var device
-    
-	   for ( i = 0; i < mydevices.length; i++) {	    
-	 	   device = mydevices[i]
-		   if (device.name == deviceName) var foundId = await device.id;
-		   console.error('after if :'+foundId)
-		   console.error('after if :'+foundId)
-	   }	 
-		  return foundId;
-   })()		  
-
- }
-
+    for ( i = 0; i < mydevices.length; i++) {
+	     console.error('mydevices.length:');
+	console.error(mydevices.length);
+	    console.error('i:');
+	console.error(i);
+      device = mydevices[i]
+      console.error('device:');
+	console.error(device);
+	    console.error('device name:');
+	console.error(device.name);
+	    console.error('device name from config:');
+	console.error(deviceName);
+      if (device.name == deviceName) foundId = device.id;
+    }
+	 console.error('we are here my found id for mirror is :');
+	console.error(foundId);   
+	   return await foundId;
+}
+    var result = request()
+console.log(result);
+}
   
 
   refreshAccessToken() {
