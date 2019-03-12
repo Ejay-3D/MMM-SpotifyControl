@@ -248,18 +248,14 @@ PreviousSpotify(currentDeviceID) {
   var foundId = null
   
  
-   async function request() {
+   const request = async() => 	{
    const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
-   var mydevices = result.devices
+   const mydevices = await result.devices
 	 console.error('we are here my devices are :');
 	console.error(mydevices);
 	   console.error('we are here my devices id is :');
 	console.error(mydevices[0].id);
-   
-   //You should check devices are null or empty.
-    //foundId = mydevices[0].id
-	   
 	   var i
 	   var device
     for ( i = 0; i < mydevices.length; i++) {
