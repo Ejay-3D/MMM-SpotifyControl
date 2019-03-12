@@ -22,7 +22,7 @@ module.exports = class SpotifyConnector {
 	
     if (moment().isBefore(this.tokenExpiresAt)) {
 	  
-	  let currentDeviceID = this.getDeviceID(payload.deviceName);
+	  let currentDeviceID = this.getDeviceID(payload.name);
 	  console.error("play on: "+currentDeviceID);
 	  return this.PlaySpotify(currentDeviceID, uri);
 	
@@ -34,7 +34,7 @@ module.exports = class SpotifyConnector {
 
           this.credentials.accessToken = response.access_token;
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-		  let currentDeviceID = this.getDeviceID(payload.deviceName);
+		  let currentDeviceID = this.getDeviceID(payload.name);
 		  return this.PlaySpotify(currentDeviceID, uri);
         })
         .catch((err) => {
@@ -238,8 +238,8 @@ PreviousSpotify(currentDeviceID) {
     
   }
   
-  getDeviceID(DeviceName) {
-	if(DeviceName != null){
+  getDeviceID(name) {
+	if(name != null){
 		let options = {
 			url: apiEndpoint + '/devices',   
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
