@@ -276,10 +276,16 @@ PreviousSpotify(currentDeviceID) {
 	console.error(foundId);   
 	  // return await request();
 }
-   var result = await request()
+   var result =  request()
 console.error("When this line is evaluated???")
 console.error(result)
 	  console.error(foundId)
+	  result.then(function(result) 
+		      {
+		  console.error("When this second line is evaluated???")
+console.error(result)
+	  console.error(foundId)
+		  
 }
   
 
