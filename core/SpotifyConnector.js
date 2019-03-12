@@ -239,14 +239,14 @@ PreviousSpotify(currentDeviceID) {
   
   getDeviceID(deviceName) {
   var options = {
-    url: apiEndpoint + '/devices',
+   // url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
     json: true,
     resolveWithFullResponse: true
   }
   var foundId = null
    const request = async () => {
-   const response = await fetch(request(options));
+   const response = await fetch(request('https:\/\/api.spotify.com/v1/me/player/devices',options));
    const result = await(response());
     var devices = result.body.devices
     //You should check devices are null or empty.
