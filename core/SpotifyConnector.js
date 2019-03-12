@@ -240,39 +240,15 @@ PreviousSpotify(currentDeviceID) {
   
   getDeviceID(deviceName) {
 	  
-	  let options = {
-			url: apiEndpoint + '/devices',   
-			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
-			json: true,
-			resolveWithFullResponse: true
-		};
-	  
-	const response =  fetch('https://api.spotify.com/v1/me/player/devices',options);
-	 function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-	  sleep(1000).then(() => {
-    	const result = response.json(); 
-	 var  mydevices =  result.devices;
-	  var i
-	
-    for ( i = 0; i < mydevices.length; i++) {
-	 var device =  mydevices[i]
-      
-      if (device.name == deviceName) var foundId = device.id;
-	    console.error('after if :'+foundId)
-    }});
-	  return foundId;
- /* var options = {
+ var options = {
    // url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
     json: true,
     resolveWithFullResponse: true
   }
    
-   async function request()  	{
-   const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
+   function request()  	{
+   const response = fetch('https://api.spotify.com/v1/me/player/devices',options);
    const result = await response.json(); 
    const mydevices = await result.devices;
 	   console.error('we are here my devices id is :');
@@ -286,12 +262,15 @@ PreviousSpotify(currentDeviceID) {
 	    console.error('after if :'+foundId)
 	   
     }
-		 return foundId;
+    (async () => {
+   return await foundId;
+})()
+		 
 	   
 }
-  const myID = request();	
-	  myID.then(foundId => console.error(foundId));
-*/	  
+    (async () => {
+   return await foundId;
+})()
 }
   
 
