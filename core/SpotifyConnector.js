@@ -270,12 +270,10 @@ PreviousSpotify(currentDeviceID) {
 		};
 		
 		request.get(options).then((response) => {
-  var allDevices = response.body.devices
-  var foundId = null
-  for (i = 0; i < allDevices.length; i++) {
-    var device = allDevices[i]
-    foundId = device.id
- 			 }
+  
+  var foundId = response.body.devices[0].id
+  console.log(foundId)
+}
 		}
 
  	 }
