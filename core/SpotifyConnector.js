@@ -278,6 +278,7 @@ PreviousSpotify(currentDeviceID) {
     }
 	 console.error('we are here my found id for mirror is :');
 	console.error(foundId);   
+	   return await foundId;
 }
     request();
 }
