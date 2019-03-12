@@ -262,18 +262,16 @@ PreviousSpotify(currentDeviceID) {
       if (device.name == deviceName) foundId = device.id;
 	    console.error('after if :'+foundId)
     }
-	
-}
-   var result =  request();
-console.error("When this line is evaluated???")
-console.error(result)
-	  console.error(foundId)
+	 var result =  request();
+console.error("When this line is evaluated???"+"result : "+result+ "foundID : "+foundId)
+
 	  request()
 		  .then((foundId) =>		      
-		  console.error("When this second line is evaluated???"),
-		  console.error("result : "+result),
-		  console.error("foundID : "+foundId))
+		  console.error("When this second line is evaluated???"+"result : "+result+ "foundID : "+foundId))
+		  
 	
+}
+  
 		 
 	  
 }
