@@ -247,31 +247,28 @@ PreviousSpotify(currentDeviceID) {
     resolveWithFullResponse: true
   }
    
-   function request()  	{
-   const response = await fetch('https://api.spotify.com/v1/me/player/devices',options);
-   const result = await response.json(); 
-   const mydevices = await result.devices;
-	   console.error('we are here my devices id is :');
-	console.error(mydevices[0].id);
+	function request()  	{
+  	   return await fetch('https://api.spotify.com/v1/me/player/devices',options);
+	}
+	  async (myID) => {
+	  const result = await request.json(); 
+   	   let mydevices = await result.devices
+	   console.error('we are here my devices id is :');		   
+	   console.error(mydevices[0].id);		
 	   var i
-	
-    for ( i = 0; i < mydevices.length; i++) {
-	 var device = await mydevices[i]
-      
-      if (device.name == deviceName) var foundId = await device.id;
-	    console.error('after if :'+foundId)
-	   
-    }
-    (async () => {
-   return await foundId;
-})()
-		 
-	   
-}
-    (async () => {
-   return await foundId;
-})()
-}
+	   var device
+    
+	   for ( i = 0; i < mydevices.length; i++) {	    
+	 	   device = mydevices[i]
+		   if (device.name == deviceName) var foundId = await device.id;
+		   console.error('after if :'+foundId)
+		   console.error('after if :'+foundId)
+	   }	 
+		  return foundId;
+   })()		  
+
+ }
+
   
 
   refreshAccessToken() {
