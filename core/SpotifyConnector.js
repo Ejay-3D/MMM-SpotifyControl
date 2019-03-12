@@ -249,7 +249,7 @@ PreviousSpotify(currentDeviceID) {
 		
 		request.get(options).then(function (response) {
 			console.error(JSON.stringify(response));
-			return response.devices.some(item => item.name === DeviceName).id;
+			return response.devices.some(item => item.name === name).id;
 		}).catch(function (err) {
 			console.error(JSON.stringify(err));
 			return err;
