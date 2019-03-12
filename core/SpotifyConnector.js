@@ -256,9 +256,8 @@ PreviousSpotify(currentDeviceID) {
 	console.error(mydevices[0].id);
    
    //You should check devices are null or empty.
-    foundId = mydevices[0].id
-	   console.error('we are here my found id is :');
-	console.error(foundId);
+    //foundId = mydevices[0].id
+	   
 	   var i
 	   var device
     for ( i = 0; i < mydevices.length; i++) {
@@ -273,7 +272,7 @@ PreviousSpotify(currentDeviceID) {
 	console.error(device.name);
 	    console.error('device name from config:');
 	console.error(deviceName);
-      if (device.name == deviceName) foundId = device.id;
+      if (device.name[i] == deviceName) foundId = device.id;
   	//	return foundId;
 	    console.error('we are here my found id for mirror is :');
 	console.error(foundId);
