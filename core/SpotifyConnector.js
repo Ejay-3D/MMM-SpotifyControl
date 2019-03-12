@@ -253,8 +253,8 @@ PreviousSpotify(currentDeviceID) {
 			console.error(JSON.stringify(response));
 			return response.devices.some(item => item.name === deviceName).id;
 		}).catch(function (err) {
-			console.error(JSON.stringify(err));
-			console.error(deviceName);
+			console.error("in getviceID: "JSON.stringify(err));
+			console.error("in getviceID device name: "deviceName);
 			return err;
 		})
 		
