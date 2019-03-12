@@ -5,6 +5,7 @@ const moment = require('moment');
 const fetch = require("node-fetch");
 var replaceall = require("replaceall");
 
+
 const tokenRefreshEndpoint = 'https:\/\/accounts.spotify.com/api/token';
 const apiEndpoint = 'https:\/\/api.spotify.com/v1/me/player';
 
@@ -20,10 +21,10 @@ module.exports = class SpotifyConnector {
   playThis(payload) {
 	let url = payload.url;  
 	let uri = replaceall("/", ":", url.replace("https:\/\/open.spotify.com", "spotify"));
-	
+	var currentDeviceID
     if (moment().isBefore(this.tokenExpiresAt)) {
 	  
-	  var currentDeviceID = this.getDeviceID(payload.deviceName);
+	  currentDeviceID = this.getDeviceID(payload.deviceName);
 	  console.error("play on: "+currentDeviceID);
 	  return this.PlaySpotify(currentDeviceID, uri);
 	
