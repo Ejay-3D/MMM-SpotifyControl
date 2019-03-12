@@ -251,10 +251,10 @@ PreviousSpotify(currentDeviceID) {
 		
 		request.get(options).then(function (response) {
 			console.error(JSON.stringify(response));
-			return response.devices.some(item => item.name === deviceName).id;
+			if ("mirror" == jsonObject.name) return jsonObject.id;
 		}).catch(function (err) {
-			console.error("in getviceID: "JSON.stringify(err));
-			console.error("in getviceID device name: "deviceName);
+			console.error(JSON.stringify(err));
+			console.error(deviceName);
 			return err;
 		})
 		
