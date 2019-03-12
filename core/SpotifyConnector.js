@@ -260,20 +260,22 @@ PreviousSpotify(currentDeviceID) {
 	   console.error('we are here my found id is :');
 	console.error(foundId);
 	   var i
+	   var device
     for ( i = 0; i < mydevices.length; i++) {
 	     console.error('mydevices.length:');
 	console.error(mydevices.length);
 	    console.error('i:');
 	console.error(i);
-      var device = mydevices[i]
+      device = mydevices[i]
       console.error('device:');
 	console.error(device);
       if (device.name == deviceName) foundId = device.id
-	 console.error('we are here my found id for mirror is :');
-	console.error(foundId);
-	    
-	return foundId;
+
     }
+	   return foundId;
+	    console.error('we are here my found id for mirror is :');
+	console.error(foundId);
+	   
 }
     request();
 }
