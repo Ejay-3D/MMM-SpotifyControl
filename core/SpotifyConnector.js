@@ -35,7 +35,7 @@ module.exports = class SpotifyConnector {
 
           this.credentials.accessToken = response.access_token;
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-		  let currentDeviceID = this.getDeviceID(payload.deviceName);
+		  currentDeviceID = this.getDeviceID(payload.deviceName);
 		  return this.PlaySpotify(currentDeviceID, uri);
         })
         .catch((err) => {
