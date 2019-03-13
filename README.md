@@ -141,6 +141,5 @@ transcriptionHook: {
 
 * if raspotify just jump back to track start instead of changing the song, an update of raspotify is needed. 
 * Previous song doesn't jump to the previous track , but restart the current one. No solution for this one. This is how the Spotify api works. 
-* On my configuration any hook called call the 'previous_song' hook first. ( I'm working on a fix with the Mk2 assistant developer.)
 
 
