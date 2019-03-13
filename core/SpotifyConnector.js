@@ -64,7 +64,7 @@ PauseSpotify(currentDeviceID) {
 
 	let options = {
 			url: apiEndpoint + '/pause',    
-			qs: {device_id: currentDeviceID},
+	//		qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -81,7 +81,7 @@ PauseSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/pause',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -100,7 +100,7 @@ ResumeSpotify(currentDeviceID) {
 
 	let options = {
 			url: apiEndpoint + '/play',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -117,7 +117,7 @@ ResumeSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/play',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -137,7 +137,7 @@ NextSpotify(currentDeviceID) {
  
 	let options = {
 			url: apiEndpoint + '/next',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -154,7 +154,7 @@ NextSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/next',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -174,7 +174,7 @@ PreviousSpotify(currentDeviceID) {
 	
 	let options = {
 			url: apiEndpoint + '/previous',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -191,7 +191,7 @@ PreviousSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/previous',    
-			qs: {device_id: currentDeviceID},
+		//	qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
