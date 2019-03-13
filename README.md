@@ -5,8 +5,9 @@ A module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project 
 To Be written 
 
 ## How it works
-To Be written 
 
+This Module allow to control Spotify player on your Mirror . 
+For now you can only control a single device. It could be your mirror if you are running Raspotify on it. 
 
 
 ## Installing
@@ -37,17 +38,28 @@ When the app is running you can access it by opening `localhost:8888` in your br
 
 Now just follow the steps described there. After successful authorisation the app will display a code snippet under the heading 
 
-**Step 3: Get your DeviceId**.
+**Step 3: Configure your mirror**. Copy that snippet and paste it into your mirror’s `config.js`. Configure the rest to your needs and you’re good to go.
+
+** If you are using NowPlayingOnSpotify Module already I suggest to update your Tokens as well in this module so both module will use the same tokens. do not use NowPlayingOnSpotify tokens as they have less permissions. 
+
+**Step 4: Get your DeviceId**.
 
 In your browser go to : 
 (https://developer.spotify.com/console/get-users-available-devices/)
 
+(img/readme/gettoken-and-try.PNG)
+
+Click on Get token and select the scope : 
+ (img/readme/select-scope.PNG)
+ 
+The Click Try 
+ (img/readme/result.PNG)
+
+On the left side you can see the device Id matching with your Mirror ( raspotify name). 
+
+Copy the id and keep it for Step 4 . 
 
 
-
-**Step 4: Configure your mirror**. Copy that snippet and paste it into your mirror’s `config.js`. Configure the rest to your needs and you’re good to go.
-
-** If you are using NowPlayingOnSpotify Module already I suggest to update your Tokens as well in this module so both module will use the same tokens. do not use NowPlayingOnSpotify tokens as they have lass permissions. 
 
 Here is an example for an entry in `config.js`
 
@@ -60,7 +72,7 @@ Here is an example for an entry in `config.js`
         clientSecret: "<YOUR_CLIENT_SECRET>",
         accessToken: "<YOUR_ACCESS_TOKEN>",
         refreshToken: "<YOUR_REFRESH_TOKEN>",
-        deviceName: "<DEVICEID>"   // See Step 3
+        deviceName: "<DEVICEID>"   // See Step 4
     }
 }
 ```
