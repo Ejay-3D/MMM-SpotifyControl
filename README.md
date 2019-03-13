@@ -47,18 +47,17 @@ Now just follow the steps described there. After successful authorisation the ap
 In your browser go to : 
 (https://developer.spotify.com/console/get-users-available-devices/)
 
-(img/readme/gettoken-and-try.PNG)
+![](img/readme/gettoken-and-try.PNG)
 
 Click on Get token and select the scope : 
- (img/readme/select-scope.PNG)
+![](img/readme/select-scope.PNG)
  
 The Click Try 
- (img/readme/result.PNG)
+![](img/readme/result.PNG)
 
-On the left side you can see the device Id matching with your Mirror ( raspotify name). 
+On the left side you can see the deviceId matching with your device.
 
 Copy the id and keep it for Step 4 . 
-
 
 
 Here is an example for an entry in `config.js`
