@@ -78,3 +78,60 @@ Here is an example for an entry in `config.js`
 }
 ```
 
+**Step 5: configure hook and command for the Mk2 assistant**.
+
+Here is a sample of hook and command set in your config.js file for your Mk2 assistant Module. 
+
+
+~~~~
+transcriptionHook: {
+        PREV_SONG: {
+            Pattern: "previous song",
+            command: "PREV_SONG"
+        },
+
+        PAUSE_SPOTIFY: {
+            pattern: "stop the music",
+            command: "PAUSE_SPOTIFY"
+        },
+        RESUME_SPOTIFY: {
+            pattern: "resume music",
+            command: "RESUME_SPOTIFY"
+        },
+        PLAY_NEXT_SPOTIFY: {
+            pattern: "next song",
+            command: "PLAY_NEXT_SPOTIFY"
+        },
+    },
+    command: {
+
+
+        PAUSE_SPOTIFY: {
+            notificationExec: {
+                notification: "PAUSE_SPOTIFY"
+            }
+        },
+
+        RESUME_SPOTIFY: {
+            notificationExec: {
+                notification: "RESUME_SPOTIFY"
+            }
+        },
+
+        PLAY_NEXT_SPOTIFY: {
+            notificationExec: {
+                notification: "PLAY_NEXT_SPOTIFY"
+            }
+        },
+
+        PREV_SONG: {
+            notificationExec: {
+                notification: "PLAY_PREVIOUS_SPOTIFY"
+            }
+        },
+
+    }
+
+~~~~
+
+    
