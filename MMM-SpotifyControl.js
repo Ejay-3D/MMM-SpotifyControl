@@ -9,8 +9,7 @@ Module.register('MMM-SpotifyControl', {
     hidden: true,
 
     // user definable
-
-	deviceName: "miroir"		  // Set to Spotify device name to controll specific device.
+	deviceId: null,  // your mirror deviceID get it from : https://developer.spotify.com/console/get-users-available-devices/
   },
 
 
@@ -48,20 +47,24 @@ Module.register('MMM-SpotifyControl', {
  
   switch(notification) {
 	case 'PLAY_SPOTIFY':
-		payload["deviceName"] = this.config.deviceName;
+		payload["deviceId"] = this.config.deviceId;
 		this.sendSocketNotification('PLAY_SPOTIFY', payload);
         break;
 	case 'PLAY_NEXT_SPOTIFY':
-		this.sendSocketNotification('PLAY_NEXT_SPOTIFY');
+		payload["deviceId"] = this.config.deviceId;
+		this.sendSocketNotification('PLAY_NEXT_SPOTIFY', payload);
 	break;
 	case 'PLAY_PREVIOUS_SPOTIFY':
-	       this.sendSocketNotification('PLAY_PREVIOUS_SPOTIFY');
+		payload["deviceId"] = this.config.deviceId;
+	       this.sendSocketNotification('PLAY_PREVIOUS_SPOTIFY', payload);
         break;
 	case 'PAUSE_SPOTIFY':
-		this.sendSocketNotification('PAUSE_SPOTIFY');
+		payload["deviceId"] = this.config.deviceId;
+		this.sendSocketNotification('PAUSE_SPOTIFY', payload);
         break;
 	case 'RESUME_SPOTIFY':
-		this.sendSocketNotification('RESUME_SPOTIFY');
+		payload["deviceId"] = this.config.deviceId;
+		this.sendSocketNotification('RESUME_SPOTIFY', payload);
 	break;
 	case 'SHUFFLE':
         //todo

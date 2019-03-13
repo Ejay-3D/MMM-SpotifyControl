@@ -24,7 +24,7 @@ module.exports = class SpotifyConnector {
 	var currentDeviceID
     if (moment().isBefore(this.tokenExpiresAt)) {
 	  
-	  currentDeviceID = this.getDeviceID(payload.deviceName);
+	  currentDeviceID = payload.deviceId
 	  console.error("play on: "+currentDeviceID);
 	  return this.PlaySpotify(currentDeviceID, uri);
 	
@@ -36,7 +36,7 @@ module.exports = class SpotifyConnector {
 
           this.credentials.accessToken = response.access_token;
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
-		  currentDeviceID = this.getDeviceID(payload.deviceName);
+		  currentDeviceID = payload.deviceId
 		  return this.PlaySpotify(currentDeviceID, uri);
         })
         .catch((err) => {
@@ -64,7 +64,7 @@ PauseSpotify(currentDeviceID) {
 
 	let options = {
 			url: apiEndpoint + '/pause',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -81,7 +81,7 @@ PauseSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/pause',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -100,7 +100,7 @@ ResumeSpotify(currentDeviceID) {
 
 	let options = {
 			url: apiEndpoint + '/play',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -117,7 +117,7 @@ ResumeSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/play',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -137,7 +137,7 @@ NextSpotify(currentDeviceID) {
  
 	let options = {
 			url: apiEndpoint + '/next',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -154,7 +154,7 @@ NextSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/next',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -174,7 +174,7 @@ PreviousSpotify(currentDeviceID) {
 	
 	let options = {
 			url: apiEndpoint + '/previous',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -191,7 +191,7 @@ PreviousSpotify(currentDeviceID) {
           this.tokenExpiresAt = moment().add(response.expires_in, 'seconds');
 		let options = {
 			url: apiEndpoint + '/previous',    
-			//qs: {device_id: currentDeviceID},
+			qs: {device_id: currentDeviceID},
 			headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
 			json: true
 		};
@@ -238,7 +238,8 @@ PreviousSpotify(currentDeviceID) {
     
   }
   
-  getDeviceID(deviceName) {
+/*
+ getDeviceID(deviceName) {
   var options = {
    // url: apiEndpoint + '/devices',
     headers: {'Authorization': 'Bearer ' + this.credentials.accessToken},
@@ -279,7 +280,7 @@ PreviousSpotify(currentDeviceID) {
     var result = request();
 console.error(result);
 }
-  
+ */
 
   refreshAccessToken() {
     let client_id = this.credentials.clientID;
