@@ -88,7 +88,7 @@ Here is a sample of hook and command set in your config.js file for your Mk2 ass
 ~~~~
 transcriptionHook: {
         PREV_SONG: {
-           Pattern: "previous song",   
+           pattern: "previous song",   
            command: "PREV_SONG"
       },
 
