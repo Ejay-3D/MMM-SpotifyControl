@@ -37,7 +37,15 @@ When the app is running you can access it by opening `localhost:8888` in your br
 
 Now just follow the steps described there. After successful authorisation the app will display a code snippet under the heading 
 
-**Step 3: Configure your mirror**. Copy that snippet and paste it into your mirror’s `config.js`. Configure the rest to your needs and you’re good to go.
+**Step 3: Get your DeviceId**.
+
+In your browser go to : 
+(https://developer.spotify.com/console/get-users-available-devices/)
+
+
+
+
+**Step 4: Configure your mirror**. Copy that snippet and paste it into your mirror’s `config.js`. Configure the rest to your needs and you’re good to go.
 
 ** If you are using NowPlayingOnSpotify Module already I suggest to update your Tokens as well in this module so both module will use the same tokens. do not use NowPlayingOnSpotify tokens as they have lass permissions. 
 
@@ -52,7 +60,8 @@ Here is an example for an entry in `config.js`
         clientSecret: "<YOUR_CLIENT_SECRET>",
         accessToken: "<YOUR_ACCESS_TOKEN>",
         refreshToken: "<YOUR_REFRESH_TOKEN>",
-        deviceName: "<DEVICENAME>"
+        deviceName: "<DEVICEID>"   // See Step 3
     }
 }
 ```
+
