@@ -135,7 +135,10 @@ transcriptionHook: {
     }
 
 ~~~~
-
+### Usage : 
+    
+   You are now all set ! Start your mirror and say " Play Bob Marley on Spotify" ... and chill...  
+   
     
 ### Known Issues : 
 
