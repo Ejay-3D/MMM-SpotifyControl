@@ -44,6 +44,8 @@ Now just follow the steps described there. After successful authorisation the ap
 
 **Step 4: Get your DeviceId**.
 
+Important ! Play a song on the desired device else it will not be shown then :
+
 In your browser go to : 
 (https://developer.spotify.com/console/get-users-available-devices/)
 
