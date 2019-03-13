@@ -87,10 +87,10 @@ Here is a sample of hook and command set in your config.js file for your Mk2 ass
 
 ~~~~
 transcriptionHook: {
-        PREV_SONG: {
-            Pattern: "previous song",
-            command: "PREV_SONG"
-        },
+      //  PREV_SONG: {
+      //      Pattern: "previous song",   // not working for now 
+      //      command: "PREV_SONG"
+     //  },
 
         PAUSE_SPOTIFY: {
             pattern: "stop the music",
@@ -126,10 +126,10 @@ transcriptionHook: {
             }
         },
 
-        PREV_SONG: {
-            notificationExec: {
-                notification: "PLAY_PREVIOUS_SPOTIFY"
-            }
+  //      PREV_SONG: {
+   //         notificationExec: {
+    //            notification: "PLAY_PREVIOUS_SPOTIFY"   // not working for now 
+      //      }
         },
 
     }
