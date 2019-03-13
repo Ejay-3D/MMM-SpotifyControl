@@ -47,15 +47,17 @@ Now just follow the steps described there. After successful authorisation the ap
 In your browser go to : 
 (https://developer.spotify.com/console/get-users-available-devices/)
 
-![](img/readme/gettoken-and-try.PNG)
+<img src="img/readme/gettoken-and-try.PNG" width="500">
 
 Click on Get token and select the scope : 
-![](img/readme/select-scope.PNG)
+
+ <img src="img/readme/select-scope.PNG" width="400">
  
 The Click Try 
-![](img/readme/result.PNG)
 
 On the left side you can see the deviceId matching with your device.
+
+ <img src="img/readme/result.PNG" width="300">
 
 Copy the id and keep it for Step 4 . 
 
