@@ -137,3 +137,6 @@ transcriptionHook: {
 ~~~~
 
     
+### Known Issues : 
+
+if raspotify just jump back to track start instead of changing the song, an update of raspotify is needed. 
