@@ -53,7 +53,7 @@ Click on Get token and select the scope :
 
  <img src="img/readme/select-scope.PNG" width="400">
  
-The Click Try 
+The Click Request Token then Try It !  
 
 On the left side you can see the deviceId matching with your device.
 
