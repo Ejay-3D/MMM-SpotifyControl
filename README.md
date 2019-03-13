@@ -1,8 +1,6 @@
 # MMM-SpotifyControl
 A module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project by [Michael Teeuw](https://github.com/MichMich) to control ( Play/pause/forward etc... ) song on Spotify.
 
-## Credits
-To Be written 
 
 ## How it works
 
