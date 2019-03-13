@@ -19,6 +19,8 @@
   <ul>
     <li>your currently playing track</li>
     <li>your playback status</li>
+    <li>app-remote-control</li>
+    <li>streaming</li>
   </ul>
   <p>To provide these data you need an app in the <a href="https://beta.developer.spotify.com/dashboard/login" target="_blank">development area of Spotify</a>. This app provides the above mentioned information to your magic mirror. This way it is made sure that you and only you have access to your Spotify data.</p>
 
@@ -100,7 +102,7 @@
     clientSecret: "{{clientSecret}}",
     accessToken: "{{accessToken}}",
     refreshToken: "{{refreshToken}}",
-    deviceName : "your-spotify-device-name" 
+    deviceId : "your-spotify-device-id"  Check README to see how to get your deviceId
   }
 },
     </pre>
