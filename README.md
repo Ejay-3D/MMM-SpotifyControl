@@ -1,4 +1,8 @@
 # MMM-SpotifyControl
+Deprecated Module. No longer supported : 
+See  : https://github.com/eouia/MMM-Spotify   for the new release  . 
+
+
 A module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project by [Michael Teeuw](https://github.com/MichMich) to control ( Play/pause/forward etc... ) song on Spotify.
 
 I have used part of the code of MMM-NOWPLAYINGONSPOTIFY module which use the same APIs call. 
